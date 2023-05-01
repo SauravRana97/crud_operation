@@ -5,7 +5,7 @@
         <img src="../../assets/images/back.png" class="responsive" />
       </v-col>
       <v-col cols="4" class="Registerformcol2">
-        <v-form @submit.prevent >
+        <v-form @submit.prevent>
           <div class="Registerformtext">Signup</div>
           <v-row>
             <v-col cols="6">
@@ -15,6 +15,7 @@
                 label="Firstname"
                 color="primary"
                 variant="solo"
+                prepend-inner-icon="mdi-account" 
                 required
               ></v-text-field>
             </v-col>
@@ -34,6 +35,7 @@
             v-model="form.email"
             :rules="rules.emailrules"
             label="Email"
+            prepend-inner-icon="mdi-email"
             placeholder="johndoe@gmail.com"
             color="primary"
             variant="solo"
@@ -46,6 +48,7 @@
             @click:append-inner="showpswd = !showpswd"
             :type="showpswd ? 'text' : 'password'"
             label="Password"
+            prepend-inner-icon="mdi-lock"
             color="primary"
             variant="solo"
             required
@@ -58,6 +61,7 @@
             @click:append-inner="showpswd1 = !showpswd1"
             :type="showpswd1 ? 'text' : 'password'"
             label="Confirmpassword"
+            prepend-inner-icon="mdi-lock"
             variant="solo"
             color="primary"
             required
@@ -69,6 +73,7 @@
             label="Phonenumber"
             variant="solo"
             color="primary"
+            prepend-inner-icon="mdi-phone"           
             required
           ></v-text-field>
 
@@ -115,24 +120,14 @@ export default {
       emailrules: [
         (value) => {
           console.log(value);
-          if (
-            regex.email.test(
-              value
-            )
-          )
-            return true;
+          if (regex.email.test(value)) return true;
 
           return "Email Not Valid..";
         },
       ],
       passwordrules: [
         (value) => {
-          if (
-            regex.password.test(
-              value
-            )
-          )
-            return true;
+          if (regex.password.test(value)) return true;
 
           return "Password Not Valid..";
         },
@@ -150,10 +145,10 @@ export default {
         },
       ],
     });
-    let initialState = reactive({...form})
-    function submit(){
-      Object.assign(form,initialState);
-      alert("submited")
+    let initialState = reactive({ ...form });
+    function submit() {
+      Object.assign(form, initialState);
+      alert("submited");
     }
 
     return {

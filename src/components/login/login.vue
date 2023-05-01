@@ -18,6 +18,7 @@
             variant="solo"
             placeholder="johndoe@gmail.com"
             hint="Enter your Email"
+            prepend-inner-icon="mdi-email"
             required
           ></v-text-field>
           <v-text-field
@@ -27,6 +28,7 @@
             :type="showpswd ? 'text' : 'password'"
             @click:append-inner="showpswd = !showpswd"
             label="Password"
+            prepend-inner-icon="mdi-lock"
             :color="color"
             variant="solo"
             hint="Enter your password "
