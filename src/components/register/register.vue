@@ -1,76 +1,72 @@
 <template>
   <v-container class="Registerform">
-    <!-- <h1>RegisterForm</h1> -->
     <v-row>
-      <v-col cols="4" class="registerimg">
-        <img src="../assets/images/back.png" />
+      <v-col cols="4" class="Registerformcol1">
+        <img src="../../assets/images/back.png" class="responsive" />
       </v-col>
-      <v-col cols="6">
+      <v-col cols="4" class="Registerformcol2">
         <v-form @submit.prevent>
+          <div class="Registerformtext">Signup</div>
           <v-row>
-            <v-col cols="4" >
+            <v-col cols="6">
               <v-text-field
                 v-model="form.firstname"
                 :rules="rules.firstname"
                 label="Firstname"
+                color="primary"
                 variant="solo"
-                
+                required
               ></v-text-field>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6">
               <v-text-field
                 v-model="form.lastname"
                 :rules="rules.lastname"
                 label="Lastname"
                 variant="solo"
+                color="primary"
+                required
               ></v-text-field>
             </v-col>
           </v-row>
-          <v-row>
-            <v-col cols="8">
-              <v-text-field
-                v-model="form.email"
-                :rules="rules.emailrules"
-                label="Email"
-                variant="solo"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="8">
-              <v-text-field
-                v-model="form.password"
-                :rules="rules.passwordrules"
-                label="Password"
-                variant="solo"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="8">
-              <v-text-field
-                v-model="form.cpassword"
-                :rules="rules.cpasswordrules"
-                label="Confirmpassword"
-                variant="solo"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="8">
-              <v-text-field
-                v-model="form.phonenumber"
-                :rules="rules.phonenumberrules"
-                label="Phonenumber"
-                variant="solo"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="8">
-              <v-btn type="submit" block class="mt-2">Submit</v-btn>
-            </v-col>
-          </v-row>
+
+          <v-text-field
+            v-model="form.email"
+            :rules="rules.emailrules"
+            label="Email"
+            color="primary"
+            variant="solo"
+            required
+          ></v-text-field>
+
+          <v-text-field
+            v-model="form.password"
+            :rules="rules.passwordrules"
+            label="Password"
+            color="primary"
+            variant="solo"
+            required
+          ></v-text-field>
+
+          <v-text-field
+            v-model="form.cpassword"
+            :rules="rules.cpasswordrules"
+            label="Confirmpassword"
+            variant="solo"
+            color="primary"
+            required
+          ></v-text-field>
+
+          <v-text-field
+            v-model="form.phonenumber"
+            :rules="rules.phonenumberrules"
+            label="Phonenumber"
+            variant="solo"
+            color="primary"
+            required
+          ></v-text-field>
+
+          <v-btn type="submit" block class="mt-2">Submit</v-btn>
         </v-form>
       </v-col>
     </v-row>
@@ -148,4 +144,4 @@ export default {
   },
 };
 </script>
-<style src="../assets/css/style.css"></style>
+<style src="../../assets/css/css/register.css"></style>

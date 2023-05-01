@@ -1,0 +1,23 @@
+.responsive {
+  width: 100%;
+  height: auto;
+}
+.loginform {
+  padding: 10% 0 0 20%;
+}
+.logincol1 {
+  border-radius: 10px 0 0 10px;
+  background-color: whitesmoke;
+}
+.logincol2 {
+  background-color: whitesmoke;
+  margin: 0% 0 0 0%;
+  border-radius: 0 10px 10px 0;
+}
+.loginformtext{
+  font-size: 2vw;
+  margin: 0 0 3% 30%;
+}
+.submitbtn{
+  margin: 0 0 0 30%;
+}

@@ -1,0 +1,21 @@
+.Registerform {
+  margin: 8% 0 0 20%;
+  width: 80%;
+  height: auto;
+ 
+}
+.Registerformcol1 {
+  background-color: whitesmoke;
+  border-radius: 10px 0 0 10px;
+}
+.Registerformcol2 {
+    background-color: whitesmoke;
+    border-radius: 0 10px 10px 0;
+  }
+  .Registerformtext{
+    font-size: 2vw;
+    margin: 0 0 3% 35%;
+  }
+/* .responsive {
+  background-color: white; 
+} */
