@@ -2,7 +2,7 @@
   <v-container>
     <v-form @submit.prevent>
       <v-row class="loginform">
-        <v-col cols="4" class="logincol1" >
+        <v-col cols="5" class="logincol1" >
           <div class="ma-4">
             <img src="../../assets/images/loginbg.jpg" class="responsive" />
           </div>
@@ -16,6 +16,7 @@
             type="email"
             :color="color"
             variant="solo"
+            placeholder="johndoe@gmail.com"
             hint="Enter your Email"
             required
           ></v-text-field>
@@ -31,9 +32,12 @@
             hint="Enter your password "
             required
           ></v-text-field>
-          <v-btn type="submit" class="submitbtn" color="red" variant="outlined" @click="submit">
-            Submit
+          <v-btn type="submit" class="submitbtn"  @click="submit">
+            Login
           </v-btn>
+          <p style="margin: 10% 0 0 0;">
+            Do not have an account? <router-link to="/register">SignUP</router-link>
+          </p>
         </v-col>
       </v-row>
     </v-form>
@@ -41,6 +45,7 @@
 </template>
 <script>
 import { reactive, ref } from "vue";
+import { regex } from "../../regularExps/regex"
 export default {
   name: "log-in",
   setup() {
@@ -59,7 +64,7 @@ export default {
         (value) => {
           console.log(value);
           if (
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{3,}))$/.test(
+            regex.email.test(
               value
             )
           )
@@ -70,7 +75,7 @@ export default {
       password: [
         (value) => {
           if (
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})/.test(
+            regex.password.test(
               value
             )
           )

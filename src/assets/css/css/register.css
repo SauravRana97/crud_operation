@@ -16,6 +16,13 @@
     font-size: 2vw;
     margin: 0 0 3% 35%;
   }
+  .submitbtn{
+    margin: 0 0 0 30%;
+    width: 30%;
+    background-color: green;
+    color: white !important;
+  
+  }
 /* .responsive {
   background-color: white; 
 } */
