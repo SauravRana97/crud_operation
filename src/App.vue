@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main class="bgcolor">
+    <v-main >
       <router-view/>
     </v-main>
   </v-app>
@@ -17,7 +17,5 @@ export default {
 }
 </script>
 <style>
-.bgcolor{
-  background-color: rgba(232, 228, 221, 0.953);
-}
+
 </style>

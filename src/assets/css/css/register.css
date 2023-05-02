@@ -1,5 +1,10 @@
+.registerContainer{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(232, 228, 221, 0.953);
+}
 .Registerform {
-  margin: 8% 0 0 20%;
+  margin: 6% 0 0 20%;
   width: 80%;
   height: auto;
  

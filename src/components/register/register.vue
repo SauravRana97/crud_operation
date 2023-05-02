@@ -1,6 +1,6 @@
 <template>
-  <v-container class="Registerform">
-    <v-row>
+  <v-container fluid class="registerContainer">
+    <v-row class="Registerform">
       <v-col cols="4" class="Registerformcol1">
         <img src="../../assets/images/back.png" class="responsive" />
       </v-col>
@@ -80,19 +80,22 @@
           <v-btn type="submit" class="submitbtn" @click="submit">
             Signup
           </v-btn>
-          <p style="margin: 5% 0 0 0">
+          <p style="margin: 5% 0 0 0;font-size: 1vw;">
             Already have an account? <router-link to="/">SignIn</router-link>
           </p>
+          <p>{{store.state.count }}</p>
         </v-form>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
-import { reactive, ref } from "vue";
+import { reactive, ref } from "vue";    
+import {useindexStore} from "../../stores/register/index"
 import { regex } from "../../regularExps/regex";
 export default {
   setup() {
+    let store = useindexStore();
     let showpswd = ref(false);
     let showpswd1 = ref(false);
     const form = reactive({
@@ -156,6 +159,7 @@ export default {
       rules,
       showpswd,
       showpswd1,
+      store ,
       submit,
     };
   },

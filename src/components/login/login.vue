@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <v-container fluid class="loginContainer">
     <v-form @submit.prevent>
       <v-row class="loginform">
-        <v-col cols="5" class="logincol1" >
+        <v-col cols="5" class="logincol1">
           <div class="ma-4">
             <img src="../../assets/images/loginbg.jpg" class="responsive" />
           </div>
@@ -17,7 +17,6 @@
             :color="color"
             variant="solo"
             placeholder="johndoe@gmail.com"
-            hint="Enter your Email"
             prepend-inner-icon="mdi-email"
             required
           ></v-text-field>
@@ -31,14 +30,12 @@
             prepend-inner-icon="mdi-lock"
             :color="color"
             variant="solo"
-            hint="Enter your password "
             required
           ></v-text-field>
-          <v-btn type="submit" class="submitbtn"  @click="submit">
-            Login
-          </v-btn>
-          <p style="margin: 10% 0 0 0;">
-            Do not have an account? <router-link to="/register">SignUP</router-link>
+          <v-btn type="submit" class="submitbtn" @click="submit"> Login </v-btn>
+          <p style="margin: 10% 0 0 0;font-size: 1vw;">
+            Do not have an account?
+            <router-link to="/registerpage">Signup</router-link>
           </p>
         </v-col>
       </v-row>
@@ -47,7 +44,7 @@
 </template>
 <script>
 import { reactive, ref } from "vue";
-import { regex } from "../../regularExps/regex"
+import { regex } from "../../regularExps/regex";
 export default {
   name: "log-in",
   setup() {
@@ -65,23 +62,13 @@ export default {
       email: [
         (value) => {
           console.log(value);
-          if (
-            regex.email.test(
-              value
-            )
-          )
-            return true;
+          if (regex.email.test(value)) return true;
           return "Email Not Valid..";
         },
       ],
       password: [
         (value) => {
-          if (
-            regex.password.test(
-              value
-            )
-          )
-            return true;
+          if (regex.password.test(value)) return true;
           else {
             return "Password Not Valid..";
           }
